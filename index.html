@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bride Story by Kush | Bridal, Hair and Beauty in Kurunegala</title>
+<meta name="description" content="Bridal, hair and beauty for your wedding day in Kurunegala, Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== COLORS: change these to re-theme the site ===== */
+:root{
+  --plum:#3B1D3A; --rose:#F2B8C6; --gold:#C8A15A; --ivory:#FFF9FA; --ink:#2A1B2B; --line:#EBD9DE;
+  --display:'Bodoni Moda','Didot',Georgia,serif;
+  --body:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 16.5px/1.65 var(--body);color:var(--ink);background:var(--ivory)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+header{background:var(--plum);color:#fff;position:sticky;top:0;z-index:50}
+.bar{display:flex;align-items:center;gap:24px;height:70px}
+.brand{font:700 1.45rem var(--display);text-decoration:none;margin-right:auto;white-space:nowrap}
+.brand small{font:500 .78em var(--display);font-style:italic;color:var(--rose);margin-left:6px}
+.menu{display:flex;align-items:center;gap:26px}
+.menu a{text-decoration:none;font-weight:500;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.menu a:hover{border-bottom-color:var(--gold)}
+.burger{display:none;width:44px;height:44px;border:0;border-radius:10px;background:transparent;cursor:pointer;padding:0;position:relative;color:#fff}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:currentColor;border-radius:2px;transition:transform .25s,opacity .2s}
+.burger span:nth-child(1){top:15px}
+.burger span:nth-child(2){top:21px}
+.burger span:nth-child(3){top:27px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.hero,section,#location{scroll-margin-top:76px}
+.btn{display:inline-block;border-radius:999px;padding:12px 28px;font-weight:500;text-decoration:none;background:var(--rose);color:var(--plum);border:2px solid var(--rose);cursor:pointer;font-family:inherit;font-size:1rem}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+
+.hero{background:var(--plum);color:#fff;padding:40px 0 84px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.hero h1{font:700 clamp(2.3rem,5.6vw,4.1rem)/1.08 var(--display)}
+.hero p{margin:20px 0 30px;font-size:1.12rem;max-width:44ch;opacity:.92}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.arch{position:relative;border-radius:999px 999px 14px 14px;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(165deg,#6B3A63 0%,var(--rose) 100%);display:grid;place-items:center;color:rgba(255,255,255,.85);font:500 1.1rem var(--display)}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero .arch{max-width:360px;margin-left:auto;outline:2px solid var(--gold);outline-offset:10px;animation:reveal 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes reveal{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
+
+section{padding:70px 0}
+h2{font:700 clamp(1.8rem,4vw,2.5rem)/1.15 var(--display);margin-bottom:10px}
+.lead{color:#6B5A6C;max-width:56ch;margin-bottom:34px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc{border-top:3px solid var(--gold);padding-top:16px}
+.svc h3{font:700 1.5rem var(--display);margin-bottom:6px}
+.svc p{color:#6B5A6C}
+.proof{margin-top:38px;font:500 1.15rem var(--display);color:var(--plum)}
+
+.hoursCard{display:flex;align-items:center;gap:14px;width:max-content;max-width:100%;margin:26px 0 0;padding:12px 22px 12px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-left:4px solid var(--gold);border-radius:14px}
+.hoursCard svg{flex:none;width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.8}
+.hoursCard small{display:block;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.hoursCard b{font:700 1.15rem var(--display);color:#fff}
+.gallery{columns:3;column-gap:18px;margin-top:30px}
+.gitem{display:block;width:100%;break-inside:avoid;margin:0 0 18px;padding:0;border:0;border-radius:14px;overflow:hidden;background:var(--line);cursor:zoom-in;position:relative;box-shadow:0 6px 18px rgba(59,29,58,.10)}
+.gitem img{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gitem::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(59,29,58,.35),transparent 45%);opacity:0;transition:opacity .3s}
+.gitem:hover img{transform:scale(1.05)}
+.gitem:hover::after{opacity:1}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(25,12,25,.94);display:none;align-items:center;justify-content:center;padding:56px 64px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb .x{top:14px;right:14px}.lb .pv{left:12px;top:50%;transform:translateY(-50%)}.lb .nx{right:12px;top:50%;transform:translateY(-50%)}
+.lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:.95rem}
+.review{max-width:820px;margin:28px 0 44px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:56px clamp(20px,4vw,36px) 28px;position:relative}
+.review::before{content:"\201C";position:absolute;top:2px;left:24px;font:700 6rem/1 var(--display);color:var(--gold)}
+.stars{color:var(--gold);letter-spacing:3px;font-size:1.3rem;margin-bottom:12px}
+.review blockquote{white-space:pre-line;font-size:1.05rem;line-height:1.75}
+.review figcaption{margin-top:22px;display:flex;flex-direction:column}
+.review figcaption b{font:700 1.2rem var(--display)}
+.review figcaption small{color:#6B5A6C}
+.rv{margin-bottom:64px}
+.rv.extra{display:none}
+#revList.open .rv.extra{display:block}
+.moreWrap{text-align:center;margin-top:8px}
+.moreBtn[hidden]{display:none}
+.moreBtn{background:var(--plum);color:#fff;border-color:var(--plum)}
+.rv:last-child{margin-bottom:0}
+.rv.np{margin-bottom:0}
+.rv.np .review{margin:0 0 28px}
+.rv.np:last-child .review{margin-bottom:0}
+.rg{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.rg .arch{grid-column:span 2;border-radius:300px 300px 12px 12px}
+.rg .arch:last-child:nth-child(3n+1){grid-column:3/5}
+.rg .arch:nth-last-child(2):nth-child(3n+1){grid-column:2/4}
+.rg .arch:last-child:nth-child(3n+2){grid-column:4/6}
+
+.film{background:var(--plum);color:#fff}
+.film .lead{color:rgba(255,255,255,.8)}
+.frame{aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000}
+.frame iframe{width:100%;height:100%;border:0}
+
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+dl{margin:18px 0 24px}
+dt{font-weight:500;margin-top:14px}
+dd a{color:var(--plum)}
+form{display:grid;gap:12px;margin-top:6px}
+label{font-weight:500;font-size:.95rem}
+input,select{width:100%;font:inherit;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.map iframe{width:100%;height:300px;border:0;border-radius:14px;margin-top:22px;background:#eee}
+.box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+
+footer{background:var(--ink);color:#d9c9d6;padding:26px 0;font-size:.92rem}
+@media(max-width:800px){
+  .brand{font-size:1.2rem}
+    .hero .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero .arch{margin:0 auto}
+  .services{grid-template-columns:1fr}
+  .gallery{columns:2;column-gap:12px}
+  .gitem{margin-bottom:12px;border-radius:12px}
+  .lb{padding:56px 10px}
+  .lb .pv{left:4px}.lb .nx{right:4px}
+  .rg{grid-template-columns:repeat(2,1fr);gap:14px}
+  .rg .arch,.rg .arch:last-child:nth-child(3n+1),.rg .arch:nth-last-child(2):nth-child(3n+1),.rg .arch:last-child:nth-child(3n+2){grid-column:auto}
+  .rg .arch:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 7px);justify-self:center}
+  .bar{gap:10px}
+  .bar .btn{padding:9px 18px;font-size:.95rem}
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--plum);padding:6px 22px 18px;border-top:1px solid rgba(255,255,255,.18);box-shadow:0 14px 28px rgba(0,0,0,.25)}
+  .menu.open{display:flex}
+  .menu a{padding:15px 4px;font-size:1.1rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  .menu a:last-child{border-bottom:0}
+}
+@media(max-width:460px){#bookTop{display:none}.brand{font-size:1.1rem}}
+@media(prefers-reduced-motion:reduce){.hero .arch{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <a class="brand" href="#top"><span id="brand"></span><small id="by"></small></a>
+  <nav class="menu" id="menu" aria-label="Main menu">
+    <a href="#top">Home</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" id="bookTop" href="#" target="_blank" rel="noopener">Book now</a>
+  <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div>
+    <h1 id="tagline"></h1>
+    <p id="intro"></p>
+    <div class="cta">
+      <a class="btn" id="bookHero" href="#" target="_blank" rel="noopener">Book a consultation</a>
+      <a class="btn ghost" id="callHero" href="#"></a>
+    </div>
+    <div class="hoursCard"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><small>Opening hours</small><b id="topHours"></b></div></div>
+  </div>
+  <div class="arch" id="heroPhoto"></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <h2>What we do</h2>
+  <p class="lead">Everything you need to look your best on your wedding day, in one place.</p>
+  <div class="services" id="svcGrid"></div>
+  <p class="proof" id="proof"></p>
+</div></section>
+
+<section id="gallery" style="background:#fff"><div class="wrap">
+  <h2>Gallery</h2>
+  <p class="lead">A few of the brides and looks from Bride Story.</p>
+  <div class="gallery" id="galGrid"></div>
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="x" type="button" aria-label="Close">×</button><button class="pv" type="button" aria-label="Previous photo">‹</button><img id="lbImg" alt="Bride Story wedding photo"><button class="nx" type="button" aria-label="Next photo">›</button><div class="ct" id="lbCt"></div></div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <h2>What our brides say</h2>
+  <div id="revList"></div>
+  <div class="moreWrap"><button type="button" class="btn moreBtn" id="moreBtn" aria-expanded="false" hidden>More reviews</button></div>
+</div></section>
+
+<section class="film" id="film"><div class="wrap">
+  <h2>Our film</h2>
+  <p class="lead">A cinematic shoot by Roy Fernando.</p>
+  <div class="frame"><iframe id="yt" title="Bride Story film" loading="lazy" allowfullscreen></iframe></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div>
+    <h2>Visit or book</h2>
+    <dl>
+      <dt>Address</dt><dd id="addr"></dd>
+      <dt>Opening hours</dt><dd id="hours"></dd>
+      <dt>Phone</dt><dd><a id="phone" href="#"></a></dd>
+      <dt>Email</dt><dd><a id="email" href="#"></a></dd>
+      <dt>Facebook</dt><dd><a id="fb" href="#" target="_blank" rel="noopener">Bride Story on Facebook</a></dd>
+    </dl>
+    <div class="cta"><a class="btn" id="mapLink" href="#" target="_blank" rel="noopener" style="background:var(--plum);border-color:var(--plum);color:#fff">Open in Google Maps</a></div>
+    <div class="map" id="location"><iframe id="map" title="Map showing Bride Story by Kush" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+  <div class="box">
+    <h2 style="font-size:1.6rem">Send us a message</h2>
+    <p class="lead" style="margin-bottom:10px">This opens WhatsApp with your details filled in.</p>
+    <form id="form">
+      <div><label for="n">Your name</label><input id="n" required autocomplete="name"></div>
+      <div><label for="d">Wedding date</label><input id="d" type="date"></div>
+      <div><label for="s">I’m interested in</label><select id="s"></select></div>
+      <button class="btn" type="submit" style="background:var(--plum);border-color:var(--plum);color:#fff">Send on WhatsApp</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap" id="copy"></div></footer>
+
+<script>
+/* ===== EDIT HERE: details, services and photos ===== */
+const CONFIG = {
+  name: "Bride Story",
+  by: "by Kush",
+  tagline: "Bridal, hair and beauty for your wedding day in Kurunegala.",
+  intro: "We help you look and feel your best on the day you’ll remember forever.",
+  whatsapp: "94776772434",
+  phone: "+94 77 677 2434",
+  email: "kushhasith@icloud.com",
+  address: "No 298/C, Colombo Road, Kurunegala, Sri Lanka",
+  hours: "Every day, 9:00 AM – 5:00 PM",
+  facebook: "https://www.facebook.com/BrideStoryByKush/",
+  mapLink: "https://maps.app.goo.gl/4Jn9DFjEJCZ1ZJKSA",
+  mapQuery: "Bride Story by Kush, 298/C Colombo Road, Kurunegala",
+  video: "",                              // film section removed
+  proof: "98% of reviewers recommend us on Facebook.",  // CHANGE or leave "" to hide
+  // PHOTOS: "hero", "g1", "g2"... are the photos built into this file (at the very bottom).
+  // To use your own photo, put it in an "images" folder next to this file and write "images/yourphoto.jpg" instead.
+  heroPhoto: "hero",
+  gallery: ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10", "g11", "g12", "g13", "g14", "g15", "g16", "g17", "g18"],
+  // REVIEWS: every review has its own photos. Delete an entry to remove it, or set reviews to [] to hide the section.
+  // pos = which part of the photo stays visible inside the arch ("x% y%").
+  reviews: [
+    {
+      name: "Jinendra Rathnayaka",
+      meta: "5 stars on Google",
+      text: "I couldn’t have asked for a better team to get me ready as a bride on one of the most special day of my life! ❤️✨\n\nFrom the very beginning, you made everything feel stress-free, comfortable, and truly special. Your kind heart, experience, patience, and supportive nature made such a big difference on my wedding day. The entire team was so flexible, friendly, and supportive, and I truly appreciated the care and attention given to every little detail.\n\nThe makeup was absolutely beautiful and flawless, my dress was perfectly chosen and beautifully styled, and my hair was so neat and elegant—everything came together exactly as I dreamed. 👰🏻✨\n\nThank you for making me feel like the most beautiful version of myself and for being such an important part of my special day. I’m so grateful for your talent, kindness, and dedication. Highly recommended to every bride looking for a stress-free and magical bridal experience! ❤️🌸 Jinendra Rathnayaka ❤️",
+      photos: [
+        {src:"r1", pos:"50% 45%"}, {src:"r2", pos:"50% 30%"}, {src:"r3", pos:"50% 30%"},
+    {src:"r4", pos:"50% 25%"}, {src:"r5", pos:"60% 75%"}, {src:"r6", pos:"32% 50%"}
+      ]
+    },
+    {
+      name: "Chamudi Kasthuriarachchi",
+      meta: "5 stars on Google",
+      text: "I’ve been going to Bride Story by Kush for more than four years, and he has always been my go-to makeup artist. ❤️ He knows exactly what suits me best and always manages to choose the perfect looks for me.\n\nFor my wedding and homecoming, I wanted two completely different looks, and both were brought to life so beautifully by his magical hands. ✨ From my dreamy bridal makeup to my homecoming look, he understood exactly what I wanted and made both days even more special. My wedding saree was truly close to my heart, and Kush, you made sure everything came together perfectly! 🌸\n\nHonestly, I was always worried about everything, from my hair and outfits to all the little details. But every time I shared my worries with him , he would simply tell me, “Don’t worry nangi, trust me. I’ll do the best for you.” ❤️ And trusting him was genuinely one of the best decisions I made. He gave me so much confidence and peace of mind during a time when I had a million things running through my head. Looking back, I couldn’t have asked for anyone better to be part of my special days.\n\nThank you, Kush, ❤️ for always understanding me, knowing what’s best for me, and putting so much love and effort into everything you do. Having my go-to makeup artist and one of my closest friends be part of such an important chapter of my life made it even more meaningful. I’ll always be grateful for the beautiful memories and for the way you made me feel on my wedding and homecoming days. 🥹❤️\n\nTo every bride looking for her dream bridal look, I wholeheartedly recommend Bride Story by Kush! You’re not just in the hands of someone incredibly talented, but someone who genuinely cares about making your special day beautiful. Thank you for everything, Kush and your incredibly talented and supportive team..\n❤️🙏🏼\n\nYou’ll always be my first choice. ❤️🌸✨\n\n— Chamudi Kasthuriarachchi —",
+      photos: [
+        {src:"c1", pos:"50% 38%"}, {src:"c2", pos:"35% 50%"}, {src:"c3", pos:"50% 35%"},
+        {src:"c4", pos:"50% 40%"}, {src:"c5", pos:"40% 30%"}, {src:"c6", pos:"40% 30%"}, {src:"c7", pos:"50% 35%"}
+      ]
+    },
+    {
+      name: "Muditha Bandaranayake",
+      meta: "5 stars on Google",
+      text: "Kushantha hasith was recommended to me by my father’s sister (chuti amma). I don’t normally wear make-up and so had no idea what to expect. Kush ayiya was so professional and immediately understood my concern. After the trial, I was in awe at how natural and beautiful I look in make-up. My husband especially couldn’t stop complimenting. I knew kushantha was the one! Not only he is so knowledgable and professional, he has great personality and positive vibes. We immediately hit it off during the trial.\n\nOn the day, he made me feel so calm and it was really fun to be around him. We had a blast! It felt like having a good friend around. My make-up on the day, I have no words to describe. Kush ayiya made me feel like the most beautiful princess but still looking like myself. I really love his work. I received so many compliments from streets people while we were out shooting. I felt like a model on the day.\n\nThank you so much kush ayiya! I really enjoy my time with you and you made the getting ready part so memorable and fun! It was a very special day for us and we are so glad you were a part of it. Thank you so so much kush ayiya😘❤️💐\n\n— Muditha Bandaranayake —",
+      photos: [
+        {src:"m1", pos:"50% 40%"}, {src:"m2", pos:"50% 30%"}
+      ]
+    },
+    {
+      name: "Eashi Wellalage",
+      meta: "5 stars on Google",
+      text: "⭐⭐⭐⭐⭐ Absolutely Amazing Experience! ❤️\n\nI honestly cannot thank Kushantha and his amazing team enough for everything they did for me and my entire bridal team on my wedding day. From the very beginning until the end, their professionalism, dedication, and genuine care made such a huge difference to my special day.\n\nKushantha didn’t just dress me beautifully — he made sure that my entire team looked absolutely stunning. Everyone was dressed so beautifully, everything was done neatly and professionally, and most importantly, everything was completed on time. O
+      
